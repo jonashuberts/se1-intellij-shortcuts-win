@@ -1,0 +1,189 @@
+\documentclass[a4paper, 10pt, landscape]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault}
+
+\usepackage[top=0.5cm, bottom=0.5cm, left=0.5cm, right=0.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{enumitem}
+
+% --- Design ---
+\definecolor{rowgray}{gray}{0.92}
+\definecolor{headerblue}{RGB}{0, 50, 100}
+
+\titleformat{\section}{\large\bfseries\color{headerblue}\uppercase}{}{0em}{}[\hrule]
+\titlespacing{\section}{0pt}{3pt}{2pt}
+
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{0.8cm}
+
+\begin{document}
+\pagestyle{empty}
+
+% --- KOPF ---
+\begin{center}
+    {\Huge \textbf{SE1 IntelliJ Shortcuts}} \\
+    \vspace{0.1cm}
+    {\large Migration Guide: macOS $\to$ Windows (QWERTZ)}
+\end{center}
+
+\vspace{0.1cm}
+
+\begin{multicols}{2}
+
+% --- 1 ---
+\section{1. Sonderzeichen (Syntax)}
+
+\textbf{Achtung:} Syntax-Zeichen benötigen meist \fbox{\textbf{Alt Gr}}.
+
+\vspace{0.1cm}
+
+\begin{center}
+\rowcolors{2}{rowgray}{white}
+\small
+\begin{tabular}{p{0.22\columnwidth} p{0.33\columnwidth} p{0.33\columnwidth}}
+\toprule
+\textbf{Zeichen} & \textbf{Win-Taste} & \textbf{Verwendung} \\
+\midrule
+\textbf{\{} & \textbf{Alt Gr + 7} & Klassen, Methoden \\
+\textbf{\}} & \textbf{Alt Gr + 0} & Blöcke schließen \\
+\textbf{[} & \textbf{Alt Gr + 8} & Array Index \\
+\textbf{]} & \textbf{Alt Gr + 9} & Array Index \\
+\textbf{<} / \textbf{>} & \textbf{Taste neben Shift} \textbf{(+ Shift)} & Generics, Vergleiche \\
+\textbf{!} & \textbf{Shift + 1} & Logisches NICHT \\
+\textbf{|} (Pipe) & \textbf{Alt Gr + <} & Logisches ODER \\
+\textbf{\textbackslash} & \textbf{Alt Gr + ?} & Escape, Pfade \\
+\textbf{@} & \textbf{Alt Gr + Q} & Annotationen \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% --- 2 ---
+\section{2. Wichtige Shortcuts (Win)}
+
+Mac \texttt{Cmd} entspricht meist Win \texttt{Strg} (IntelliJ).
+
+\vspace{0.1cm}
+
+\begin{center}
+\rowcolors{2}{rowgray}{white}
+\small
+\begin{tabular}{p{0.45\columnwidth} p{0.45\columnwidth}}
+\toprule
+\textbf{Aktion} & \textbf{Shortcut} \\
+\midrule
+\textbf{Quick Fix / Import} & \fbox{\textbf{Alt + Enter}} \\
+Code Completion & \textbf{Strg + Leertaste} \\
+\midrule
+\textbf{Navigation} & \\
+Gehe zu Deklaration & \textbf{Strg + B} \\
+Zurückspringen & \textbf{Strg + Alt + $\leftarrow$} \\
+Search Everywhere & \textbf{Shift + Shift} \\
+\midrule
+\textbf{Editing} & \\
+Code formatieren & \textbf{Strg + Alt + L} \\
+Zeile duplizieren & \textbf{Strg + D} \\
+Zeile löschen & \textbf{Strg + Y} \\
+Auswahl erweitern & \textbf{Strg + W} \\
+Zeile kommentieren & \textbf{Strg + /} \\
+Block kommentieren & \textbf{Strg + Shift + /} \\
+\midrule
+\textbf{Refactoring} & \\
+Umbenennen & \textbf{Shift + F6} \\
+Methode extrahieren & \textbf{Strg + Alt + M} \\
+Variable extrahieren & \textbf{Strg + Alt + V} \\
+\midrule
+\textbf{Ausführen} & \\
+Run & \textbf{Shift + F10} \\
+Run Menü / Coverage & \textbf{Shift + Alt + F10} \\
+Breakpoint setzen & \textbf{Strg + F8} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\columnbreak
+
+% --- 3 ---
+\section{3. Code Generation (Alt + Einfg)}
+
+Menü öffnen mit \fbox{\textbf{Alt + Einfg}}.
+
+\vspace{0.1cm}
+
+\begin{center}
+\rowcolors{2}{rowgray}{white}
+\small
+\begin{tabular}{p{0.3\columnwidth} p{0.6\columnwidth}}
+\toprule
+\textbf{Auswahl} & \textbf{Erzeugt...} \\
+\midrule
+Constructor & Konstruktor für Felder \\
+Getter/Setter & Zugriffsmethoden \\
+equals/hashCode & Objektvergleich (Inhalt) \\
+toString() & String-Repräsentation \\
+Override... & Methode überschreiben (\textbf{Strg + O}) \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% --- 4 ---
+\section{4. Live Templates (Tippen $\to$ Tab)}
+
+\vspace{0.1cm}
+
+\begin{center}
+\rowcolors{2}{rowgray}{white}
+\small
+\begin{tabular}{p{0.25\columnwidth} p{0.65\columnwidth}}
+\toprule
+\textbf{Kürzel} & \textbf{Ergebnis} \\
+\midrule
+\texttt{psvm} & \texttt{public static void main(...)} \\
+\texttt{sout} & \texttt{System.out.println();} \\
+\texttt{soutv} & Print Variable mit Namen \\
+\texttt{fori} & Klassische for-Schleife \\
+\texttt{iter} & Enhanced for-loop \\
+\texttt{ifn / inn} & Null-Prüfung \\
+\texttt{thr} & \texttt{throw new} \\
+\texttt{prsf} & \texttt{private static final} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+% --- 5 ---
+\section{5. Troubleshooting \& Debugger}
+
+\small
+
+\textbf{Roter Code / Fehler?}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item Cursor auf Fehler $\to$ \fbox{\textbf{Alt + Enter}}
+    \item Syntax prüfen: \texttt{;} oder \texttt{\}} vergessen?
+\end{itemize}
+
+\textbf{Parameter anzeigen}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item Cursor in \texttt{( )} $\to$ \textbf{Strg + P}
+\end{itemize}
+
+\textbf{Fenster maximiert?}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item Toggle Editor-Maximierung: \textbf{Shift + F12}
+\end{itemize}
+
+\textbf{Debugger}
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item \textbf{F7} Step Into (In Methode rein)
+    \item \textbf{F8} Step Over (Nächste Zeile)
+    \item \textbf{F9} Resume (Weiter bis Breakpoint)
+\end{itemize}
+
+\end{multicols}
+\end{document}
